@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboarder</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/dashboarder.css">
+</head>
+<body>
+  <form action="/">
+    <fieldset>
+      <legend>Dashboarder</legend>
+      <label>
+        Show each dashboard for
+        <input type="number" value="20" name="duration" step="1" min="1" required>
+        seconds.
+      </label>
+
+      <div class="input-rows">
+        <div class="input-row">
+          <input type="number" min="1" step="1" placeholder="Duration">
+          <input type="url" placeholder="URL" value="">
+          <label class="persistent"><input type="checkbox">Don't reload</label>
+        </div>
+        <div class="input-row">
+          <input type="number" min="1" step="1" placeholder="Duration">
+          <input type="url" placeholder="URL" value="">
+          <label class="persistent"><input type="checkbox">Don't reload</label>
+        </div>
+        <div class="input-row">
+          <input type="number" min="1" step="1" placeholder="Duration">
+          <input type="url" placeholder="URL">
+          <label class="persistent"><input type="checkbox">Don't reload</label>
+        </div>
+        <div class="input-row">
+          <input type="number" min="1" step="1" placeholder="Duration">
+          <input type="url" placeholder="URL">
+          <label class="persistent"><input type="checkbox">Don't reload</label>
+        </div>
+        <div class="input-row">
+          <input type="number" min="1" step="1" placeholder="Duration">
+          <input type="url" placeholder="URL">
+          <label class="persistent"><input type="checkbox">Don't reload</label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <input type="submit" value="Go">
+        <br>
+        <a href="/" class="reset">Reset form</a>
+      </div>
+    </fieldset>
+  </form>
+  <div id="dashboards"></div>
+
+  <script src="http://localhost:35729/livereload.js"></script>
+  <script src="js/dashboarder.js"></script>
+</body>
+</html>
