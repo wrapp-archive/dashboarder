@@ -36,7 +36,7 @@
 
   function startDashboarder(form, dashboardContainer, callback) {
     var data = readDashboardData(form);
-    if (data.length === 0) return;
+    if (data.length < 2) return;
     var iframe = data[0].iframe;
 
     dashboardContainer.appendChild(iframe);
