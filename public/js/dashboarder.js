@@ -197,8 +197,12 @@
     addInputsIfNeeded(form);
   }, false);
 
-  prefilData(form, window.location.hash);
+  form.querySelector("a.reset").addEventListener('click', function(ev) {
+    window.location.hash = '';
+    window.location.reload();
+  }, false);
 
+  prefilData(form, window.location.hash);
 
   if (window.location.hostname === 'localhost') {
     var script = document.createElement("script");
