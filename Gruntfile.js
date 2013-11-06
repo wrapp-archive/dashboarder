@@ -72,8 +72,10 @@ module.exports = function(grunt) {
 
   function execCommands(commands, callback) {
     if (commands.length === 0) return callback(true);
+    var command = commands[0];
 
-    exec(commands[0], function(error, stdout) {
+    grunt.log.writeln("Executing command " + command);
+    exec(command, function(error, stdout) {
       grunt.log.writeln(stdout);
       if (error) {
         grunt.fail.warn(error);
