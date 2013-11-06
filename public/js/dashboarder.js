@@ -199,4 +199,11 @@
 
   prefilData(form, window.location.hash);
 
+
+  if (window.location.hostname === 'localhost') {
+    var script = document.createElement("script");
+    script.src = "http://localhost:35729/livereload.js";
+    document.querySelector("head").appendChild(script);
+  }
+
 })(document, console);
