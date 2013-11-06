@@ -170,7 +170,10 @@
   function addInputsIfNeeded(form) {
     var lastInput = form.querySelector(".input-row:last-child input[type=url]");
     if (!lastInput.value) return;
+    addInputRow(form);
+  }
 
+  function addInputRow(form) {
     var firstRow = form.querySelector(".input-row:first-child")
       , newRow = firstRow.cloneNode();
 
@@ -205,6 +208,8 @@
   }, false);
 
   prefilData(form, window.location.hash);
+
+  while (form.querySelectorAll(".input-row").length < 5) addInputRow(form);
 
   if (window.location.hostname === 'localhost') {
     var script = document.createElement("script");
