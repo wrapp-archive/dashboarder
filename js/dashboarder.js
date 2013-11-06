@@ -36,7 +36,7 @@
 
   function startDashboarder(form, dashboardContainer, callback) {
     var data = readDashboardData(form);
-    if (data.length === 0) return;
+    if (data.length < 2) return;
     var iframe = data[0].iframe;
 
     dashboardContainer.appendChild(iframe);
@@ -183,8 +183,10 @@
   }
 
   form.addEventListener('submit', function(ev) {
-    var container = document.querySelector("#dashboards");
     ev.preventDefault();
+    var container = document.querySelector("#dashboards");
+    if (form.querySelector("fieldset").disabled) return;
+
     startDashboarder(form, container, function() {
       location.hash = optionsString(form);
       document.body.classList.add("started");
@@ -197,8 +199,12 @@
     addInputsIfNeeded(form);
   }, false);
 
-  prefilData(form, window.location.hash);
+  form.querySelector("a.reset").addEventListener('click', function(ev) {
+    window.location.hash = '';
+    window.location.reload();
+  }, false);
 
+  prefilData(form, window.location.hash);
 
   if (window.location.hostname === 'localhost') {
     var script = document.createElement("script");
