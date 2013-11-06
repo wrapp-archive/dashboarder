@@ -209,8 +209,6 @@
 
   prefilData(form, window.location.hash);
 
-  while (form.querySelectorAll(".input-row").length < 5) addInputRow(form);
-
   if (window.location.hostname === 'localhost') {
     var script = document.createElement("script");
     script.src = "http://localhost:35729/livereload.js";
