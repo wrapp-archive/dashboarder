@@ -2,8 +2,8 @@ body,html{width:100%;height:100%;margin:0;padding:0;background:#333;-webkit-tran
 form{position:relative;z-index:2;width:100%;height:100%;background:#fff;display:-webkit-box;display:-moz-box;display:-ms-box;display:-webkit-flex;display:box;display:flex;-webkit-box-orient:vertical;-moz-box-orient:vertical;-o-box-orient:vertical;-ms-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-pack:center;-moz-box-pack:center;-o-box-pack:center;-ms-box-pack:center;-webkit-justify-content:center;justify-content:center;}
 form input[name=duration]{width:45px;font-size:13px;margin:5px}
 form legend{font-size:50px;font-weight:lighter;margin-bottom:20px}
-form fieldset{border:none;width:100%;text-align:center;max-height:90%;overflow:scroll}
-form .input-row{position:relative;max-width:700px;margin:15px auto;}
+form fieldset{border:none;width:100%;text-align:center;max-height:90%;padding:0}
+form .input-row{position:relative;width:40%;max-width:700px;margin:15px auto;}
 form .input-row input[type=url]{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 form .input-row input[type=number]{position:absolute;right:100%;margin-right:20px;width:105px}
 form .input-row label{color:#666;}
