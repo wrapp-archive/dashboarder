@@ -183,8 +183,10 @@
   }
 
   form.addEventListener('submit', function(ev) {
-    var container = document.querySelector("#dashboards");
     ev.preventDefault();
+    var container = document.querySelector("#dashboards");
+    if (form.querySelector("fieldset").disabled) return;
+
     startDashboarder(form, container, function() {
       location.hash = optionsString(form);
       document.body.classList.add("started");
