@@ -1,0 +1,29 @@
+{
+  "name": "dashboarder",
+  "author": "Nicklas Ansman <nicklas@wrapp.com>",
+  "description": "A simple web app to rotate between multiple dashboards.",
+  "version": "0.0.1",
+  "scripts": {
+    "watch": "grunt watch",
+    "server": "node server.js",
+    "test": "grunt test",
+    "build": "grunt build"
+  },
+  "private": false,
+  "license": "MIT",
+  "dependencies": {
+    "node-static": "~0.7.1",
+    "winston": "~0.7.2",
+    "colors": "~0.6.2",
+    "stylus": "~0.38.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-stylus": "~0.4.0",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrapp/dashboarder.git"
+  }
+}
