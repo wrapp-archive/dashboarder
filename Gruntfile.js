@@ -1,3 +1,5 @@
+var exec = require("child_process").exec;
+
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -67,4 +69,27 @@ module.exports = function(grunt) {
   grunt.registerTask('test', 'jshint');
   grunt.registerTask('heroku:production', ['stylus']);
   grunt.registerTask('build', ['stylus']);
+
+  function execCommands(commands, callback) {
+    if (commands.length === 0) return callback(true);
+
+    exec(commands[0], function(error, stdout) {
+      grunt.log.writeln(stdout);
+      if (error) {
+        grunt.fail.warn(error);
+        callback(false);
+      } else execCommands(commands.slice(1), callback);
+    });
+  }
+
+  grunt.registerTask('gh-pages', function() {
+    var commands = [
+      "git checkout gh-pages",
+      "git merge -s subtree --no-edit master",
+      "git push origin gh-pages",
+      "git checkout master"
+    ];
+
+    execCommands(commands, this.async());
+  });
 };
